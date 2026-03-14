@@ -64,7 +64,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8080/api/students",
+      "name": "http://localhost:8081/api/students",
       "event": [
         {
           "listen": "test",
