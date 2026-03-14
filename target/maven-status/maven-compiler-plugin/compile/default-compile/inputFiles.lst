@@ -1,0 +1,17 @@
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\controller\CourseController.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\controller\StudentController.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\dto\CourseRequest.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\dto\CourseResponse.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\exception\GlobalExceptionHandler.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\exception\NullCourseException.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\exception\NullStudentException.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\model\Course.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\model\Student.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\repository\CourseRepository.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\repository\StudentRepository.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\StudentRegDemo.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\validation\CourseSizeValidator.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\validation\CourseValidator.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\validation\ErrorCode.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\validation\StudentValidator.java
+C:\Users\aiden\IdeaProjects\lab-five\src\main\java\com\baarsch_bytes\studentRegDemo\validation\ValidCourseCapacity.java
