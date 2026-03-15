@@ -18,6 +18,13 @@ public class CourseSizeValidator implements
         int currentSize = course.getRoster() != null ?
                 course.getRoster().size() : 0;
 
-        return currentSize <= course.getMaxSize();
+        if (currentSize <= course.getMaxSize()) return true;
+
+        constraintValidatorContext.disableDefaultConstraintViolation();
+        constraintValidatorContext.buildConstraintViolationWithTemplate(
+                constraintValidatorContext.getDefaultConstraintMessageTemplate())
+                .addPropertyNode("roster")
+                .addConstraintViolation();
+        return false;
     }
 }

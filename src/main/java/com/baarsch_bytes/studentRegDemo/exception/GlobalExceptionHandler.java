@@ -1,5 +1,6 @@
 package com.baarsch_bytes.studentRegDemo.exception;
 
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -29,6 +30,15 @@ public class GlobalExceptionHandler {
                 .forEach(err -> errors.put(err.getField(), err.getDefaultMessage()));
 
         // return an HTTP Error Response with the errors and messages attached
+        return ResponseEntity.badRequest().body(errors);
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<Map<String, String>>
+            handleConstraintViolationExceptions(ConstraintViolationException e) {
+        Map<String, String> errors = new HashMap<>();
+        e.getConstraintViolations()
+                .forEach(v -> errors.put(v.getPropertyPath().toString(), v.getMessage()));
         return ResponseEntity.badRequest().body(errors);
     }
 }

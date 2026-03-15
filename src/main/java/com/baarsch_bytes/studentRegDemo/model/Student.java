@@ -1,4 +1,5 @@
 package com.baarsch_bytes.studentRegDemo.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -27,6 +28,7 @@ public class Student {
     @Max(value = 4, message = "No GPAs above 4.0 allowed")
     private Double gpa;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "roster")
     private Set<Course> courses = new HashSet<>();
 
