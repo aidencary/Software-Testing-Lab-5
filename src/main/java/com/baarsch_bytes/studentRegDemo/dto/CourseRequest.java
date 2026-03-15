@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Size;
 import java.util.Set;
 
 public class CourseRequest {
+
     @NotNull(message = "Name is required")
     @Size(min = 1, max = 255, message = "Name must be between 1 and 255 characters")
     private String name;
@@ -20,6 +21,12 @@ public class CourseRequest {
     @Size(min = 1, max = 255, message = "Room must be between 1 and 255 characters")
     private String room;
 
+    /*
+    private String name;
+    private Long instructor;
+    private Integer maxSize;
+    private String room;
+    */
     private Set<Long> roster;
 
     public CourseRequest(){}

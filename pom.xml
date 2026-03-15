@@ -234,7 +234,7 @@
               <executable>newman</executable>
               <arguments>
                 <argument>run</argument>
-                <argument>${project.basedir}/src/test/resources/postman/SRDPMCollection.json</argument>
+                <argument>${project.basedir}/src/test/resources/postman/StudentRegDemo.postman_collection.json</argument>
                 <argument>-e</argument>
                 <argument>${project.basedir}/src/test/resources/postman/Local.postman_environment.json</argument>
                 <argument>-r</argument>
