@@ -33,11 +33,17 @@
 
 - Run `mvn verify` to start the application, execute the Postman collection via Newman, and stop the application automatically.
 
+### Running Integration Tests (Postman)
+
+1. Import `src/test/resources/postman/StudentRegDemoFinal.postman_collection.json` into Postman
+2. Also import `Local.postman_environment.json` and select it as the active environment
+3. In the **Collections** sidebar, click the **⋯** (three dots) next to **StudentRegDemoFinal** and select **Run collection**
+
 ## Troubleshooting
 
 ### `'C:\Users\<name>' is not recognized as an internal or external command` during `mvn verify`
 
-Newman is installed as a `.cmd` script (e.g., via `npm install -g newman`), which Windows cannot execute directly without going through `cmd.exe`. If the path to Newman also contains spaces, the command breaks further. The `pom.xml` exec plugin configuration works around this by invoking `cmd /c newman` instead of `newman` directly, so no manual fix is needed — but if you see this error after editing `pom.xml`, make sure the `<executable>` is set to `cmd` with `/c` and `newman` as the first two `<argument>` entries.
+Newman is installed as a `.cmd` script (e.g., via `npm install -g newman`), which Windows cannot execute directly without going through `cmd.exe`. If the path to Newman also contains spaces, the command breaks further. The `pom.xml` exec plugin configuration works around this by invoking `cmd /c newman` instead of `newman` directly, so no manual fix is needed. If you see this error after editing `pom.xml`, make sure the `<executable>` is set to `cmd` with `/c` and `newman` as the first two `<argument>` entries.
 
 ### Newman not found (`'newman' is not recognized`)
 
