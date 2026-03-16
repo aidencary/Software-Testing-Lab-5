@@ -231,10 +231,12 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>newman</executable>
+              <executable>cmd</executable>
               <arguments>
+                <argument>/c</argument>
+                <argument>newman</argument>
                 <argument>run</argument>
-                <argument>${project.basedir}/src/test/resources/postman/StudentRegDemo.postman_collection.json</argument>
+                <argument>${project.basedir}/src/test/resources/postman/StudentRegDemoFinal.postman_collection.json</argument>
                 <argument>-e</argument>
                 <argument>${project.basedir}/src/test/resources/postman/Local.postman_environment.json</argument>
                 <argument>-r</argument>

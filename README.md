@@ -19,7 +19,7 @@
 
 ## Test Files
 
-- `StudentRegDemo.postman_collection.json`: Postman collection covering full CRUD operations for Students and Courses, organized into folders: `AddingStudents`, `AddingCourses`, `GetRequests`, `DeleteRequests`, and `UpdateRequests`. Includes positive cases, boundary tests, and negative cases (marked with `*`).
+- `StudentRegDemoFinal.postman_collection.json`: Postman collection covering full CRUD operations for Students and Courses, organized into folders: `AddingStudents`, `AddingCourses`, `GetRequests`, `DeleteRequests`, and `UpdateRequests`. Includes positive cases, boundary tests, and negative cases (marked with `*`).
 - `Local.postman_environment.json`: Postman environment file defining `base_url` (`localhost:8081`), `student_id`, and `course_id` variables.
 - `SRDPMCollection.json`: Alternate/legacy Postman collection.
 
@@ -32,3 +32,17 @@
 ### Running Integration Tests (Newman)
 
 - Run `mvn verify` to start the application, execute the Postman collection via Newman, and stop the application automatically.
+
+## Troubleshooting
+
+### `'C:\Users\<name>' is not recognized as an internal or external command` during `mvn verify`
+
+Newman is installed as a `.cmd` script (e.g., via `npm install -g newman`), which Windows cannot execute directly without going through `cmd.exe`. If the path to Newman also contains spaces, the command breaks further. The `pom.xml` exec plugin configuration works around this by invoking `cmd /c newman` instead of `newman` directly, so no manual fix is needed — but if you see this error after editing `pom.xml`, make sure the `<executable>` is set to `cmd` with `/c` and `newman` as the first two `<argument>` entries.
+
+### Newman not found (`'newman' is not recognized`)
+
+Newman must be installed globally before running `mvn verify`:
+```
+npm install -g newman
+```
+After installing, open a new terminal so the updated `PATH` is picked up.

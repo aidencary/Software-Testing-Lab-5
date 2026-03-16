@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "eb8dcae7-7840-4248-9144-3d33390f3346",
-    "name": "StudentRegDemo",
+    "_postman_id": "3ffa38ba-8b5f-42db-8458-55416e3b61e7",
+    "name": "StudentRegDemoFinal",
     "description": "## StudentRegDemo\n\nThis collection supports API testing for a **Student Registration** system. It covers the full set of CRUD operations for two core resources — **Students** and **Courses** — and is organized to validate both expected and edge-case behavior.\n\n### Structure\n\n| Folder | Description |\n|---|---|\n| **AddingStudents** | Requests to create student records, including valid inputs, boundary tests, and negative cases |\n| **AddingCourses** | Requests to create course records, including valid inputs, boundary tests, and negative cases |\n| **GetRequests** | Retrieve all students (`GetStudents`) and all courses (`GetCourses`) |\n| **DeleteRequests** | Remove a student (`DeleteStudent`) or course (`DeleteCourse`) by ID |\n| **UpdateRequests** | Modify an existing student (`UpdateStudent`) or course (`UpdateCourse`) by ID |\n\n### Testing Approach\n\n- **Positive cases** — valid payloads that should return successful responses\n- **Boundary tests** — inputs at the edge of accepted value ranges (e.g., name length limits, GPA bounds, course size limits)\n- **Negative cases** — invalid or incomplete payloads expected to trigger error responses; these requests are marked with `*` in their names\n\n### Variables\n\n| Variable | Description |\n|---|---|\n| `{{base_url}}` | The base URL of the API server (set in the active environment) |\n| `{{student_id}}` | The ID of the target student, used in delete and update requests |\n| `{{course_id}}` | The ID of the target course, used in delete and update requests |\n\nConfigure these variables in the **Local** environment before running the collection.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "53041154",
-    "_collection_link": "https://go.postman.co/collection/53041154-eb8dcae7-7840-4248-9144-3d33390f3346?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/53041154-3ffa38ba-8b5f-42db-8458-55416e3b61e7?source=collection_link"
   },
   "item": [
     {
@@ -121,6 +121,59 @@
               "response": []
             },
             {
+              "name": "AddStudentNameLowerBoundary",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Response is valid JSON\", function () {\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Student with 255-character name added successfully\", function () {\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData.message).to.include(\"added successfully\");\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"A\",\r\n  \"major\": \"History\",\r\n  \"gpa\": 3.0\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/students",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "students"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
               "name": "AddStudentMajorUpperBoundary",
               "event": [
                 {
@@ -154,6 +207,59 @@
                 "body": {
                   "mode": "raw",
                   "raw": "{\r\n  \"name\": \"Ace\",\r\n  \"major\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n  \"gpa\": 3.0\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/students",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "students"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "AddStudentMajorLowerBoundary",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Response is valid JSON\", function () {\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Student with 255-character name added successfully\", function () {\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData.message).to.include(\"added successfully\");\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Ace\",\r\n  \"major\": \"A\",\r\n  \"gpa\": 3.0\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -939,6 +1045,59 @@
               "response": []
             },
             {
+              "name": "AddCourseUpperMajorBoundary",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Response has a non-empty body\", function () {\r",
+                      "    pm.response.to.have.body;\r",
+                      "    pm.expect(pm.response.text()).to.not.be.empty;\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Course with 255-character name added successfully\", function () {\r",
+                      "    var responseText = pm.response.text();\r",
+                      "    pm.expect(responseText).to.include(\"added successfully\");\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Software Testing\",\r\n  \"maxSize\": 5,\r\n  \"instructor\": 1,\r\n  \"room\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/courses",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "courses"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
               "name": "AddCourseSizeBoundary",
               "event": [
                 {
@@ -1271,6 +1430,109 @@
       "name": "GetRequests",
       "item": [
         {
+          "name": "GetStudentByIdNotFound*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404 or 200\", () => {",
+                  "    pm.expect([404, 200]).to.include(pm.response.code);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/students/9999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetStudentById",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is valid JSON\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains student data\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"id\");",
+                  "    pm.expect(jsonData).to.have.property(\"name\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/students/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "GetEnrollment",
           "event": [
             {
@@ -1584,6 +1846,38 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "DeleteCourseNotFound*",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 404 or 405\", () => {",
+                      "    pm.expect([404, 405]).to.include(pm.response.code);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/courses/9999",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "courses",
+                    "9999"
+                  ]
+                }
+              },
+              "response": []
             }
           ]
         }
@@ -1783,7 +2077,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n  \"name\": \"Updated Course Name\",\r\n  \"instructor\": 1,\r\n  \"maxSize\": 30,\r\n  \"room\": \"MCS 338\",\r\n  \"roster\": [1, 2, 3, 4]\r\n}\r\n",
+                  "raw": "{\r\n  \"name\": \"Updated Course Name\",\r\n  \"instructor\": 1,\r\n  \"maxSize\": 4,\r\n  \"room\": \"MCS 338\",\r\n  \"roster\": [1, 2, 3, 4]\r\n}\r\n",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -2430,7 +2724,7 @@
               "response": []
             },
             {
-              "name": "UpdateStudentGPAAboveMin*",
+              "name": "UpdateStudentGPABelowMin*",
               "event": [
                 {
                   "listen": "test",
@@ -2462,7 +2756,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Aiden\",\r\n    \"major\": \"Computer Science\",\r\n    \"gpa\": 0.1\r\n}\r\n",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Aiden\",\r\n    \"major\": \"Computer Science\",\r\n    \"gpa\": 0.0\r\n}\r\n",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -2803,6 +3097,402 @@
           ]
         }
       ]
+    },
+    {
+      "name": "RemoveStudentFromCourse",
+      "item": [
+        {
+          "name": "RemoveStudentFromCourse",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response confirms student was removed\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"removed successfully\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "1"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/removeStudent/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "removeStudent",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "RemoveStudentFromCourseNotEnrolled*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response indicates student is not in course\", function () {",
+                  "    pm.expect(pm.response.text()).to.eql(\"Student not in that course\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "1"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/removeStudent/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "removeStudent",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "RemoveStudentFromCourseStudentNotFound*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response indicates student does not exist\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"No such student exists\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "9999"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/removeStudent/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "removeStudent",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "RemoveStudentFromCourseCourseNotFound*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response indicates course does not exist\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"No such course exists\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "1"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/removeStudent/9999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "removeStudent",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AddStudentToCourse",
+      "item": [
+        {
+          "name": "AddStudentToCourse",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response confirms student was added to course\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"added successfully\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "1"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/addStudent/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "addStudent",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AddStudentToCourseFull*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response indicates course is full\", function () {",
+                  "    pm.expect(pm.response.text()).to.eql(\"Course is full\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "1"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/addStudent/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "addStudent",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AddStudentToCourseStudentNotFound*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response indicates student does not exist\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"No such student exists\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "9999"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/addStudent/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "addStudent",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AddStudentToCourseCourseNotFound*",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response indicates course does not exist\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"No such course exists\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "1"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/courses/addStudent/9999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "addStudent",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "variable": [
@@ -2813,6 +3503,14 @@
     {
       "key": "student_id",
       "value": ""
+    },
+    {
+      "key": "course_id",
+      "value": "1"
+    },
+    {
+      "key": "base_url",
+      "value": "http://localhost:8081"
     }
   ]
 }
