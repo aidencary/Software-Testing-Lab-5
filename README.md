@@ -19,7 +19,7 @@
 
 ## Test Files
 
-- `StudentRegDemoFinal.postman_collection.json`: Postman collection covering full CRUD operations for Students and Courses, organized into folders: `AddingStudents`, `AddingCourses`, `GetRequests`, `DeleteRequests`, and `UpdateRequests`. Includes positive cases, boundary tests, and negative cases (marked with `*`).
+- `AidenStudentRegDemo.postman_collection.json`: Postman collection covering full CRUD operations for Students and Courses, organized into folders: `AddingStudents`, `AddingCourses`, `GetRequests`, `DeleteRequests`, and `UpdateRequests`. Includes positive cases, boundary tests, and negative cases (marked with `*`).
 - `Local.postman_environment.json`: Postman environment file defining `base_url` (`localhost:8081`), `student_id`, and `course_id` variables.
 - `SRDPMCollection.json`: Alternate/legacy Postman collection.
 
