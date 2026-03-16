@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "05e6a1b4-e111-4573-8178-cece6be63884",
+    "_postman_id": "90b6cbcf-cc24-450e-a0ed-985465a6c616",
     "name": "AidenStudentRegDemo",
     "description": "## StudentRegDemo\n\nThis collection supports API testing for a **Student Registration** system. It covers the full set of CRUD operations for two core resources — **Students** and **Courses** — and is organized to validate both expected and edge-case behavior.\n\n### Structure\n\n| Folder | Description |\n|---|---|\n| **AddingStudents** | Requests to create student records, including valid inputs, boundary tests, and negative cases |\n| **AddingCourses** | Requests to create course records, including valid inputs, boundary tests, and negative cases |\n| **GetRequests** | Retrieve all students (`GetStudents`) and all courses (`GetCourses`) |\n| **DeleteRequests** | Remove a student (`DeleteStudent`) or course (`DeleteCourse`) by ID |\n| **UpdateRequests** | Modify an existing student (`UpdateStudent`) or course (`UpdateCourse`) by ID |\n\n### Testing Approach\n\n- **Positive cases** — valid payloads that should return successful responses\n- **Boundary tests** — inputs at the edge of accepted value ranges (e.g., name length limits, GPA bounds, course size limits)\n- **Negative cases** — invalid or incomplete payloads expected to trigger error responses; these requests are marked with `*` in their names\n\n### Variables\n\n| Variable | Description |\n|---|---|\n| `{{base_url}}` | The base URL of the API server (set in the active environment) |\n| `{{student_id}}` | The ID of the target student, used in delete and update requests |\n| `{{course_id}}` | The ID of the target course, used in delete and update requests |\n\nConfigure these variables in the **Local** environment before running the collection.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "53041154",
-    "_collection_link": "https://go.postman.co/collection/53041154-05e6a1b4-e111-4573-8178-cece6be63884?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/53041154-90b6cbcf-cc24-450e-a0ed-985465a6c616?source=collection_link"
   },
   "item": [
     {
@@ -36,9 +36,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -89,9 +87,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -136,15 +132,13 @@
                       "    pm.response.to.be.json;\r",
                       "});\r",
                       "\r",
-                      "pm.test(\"Student with 255-character name added successfully\", function () {\r",
+                      "pm.test(\"Student with 1-character name added successfully\", function () {\r",
                       "    var jsonData = pm.response.json();\r",
                       "    pm.expect(jsonData.message).to.include(\"added successfully\");\r",
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -189,15 +183,13 @@
                       "    pm.response.to.be.json;\r",
                       "});\r",
                       "\r",
-                      "pm.test(\"Student with 255-character name added successfully\", function () {\r",
+                      "pm.test(\"Student with 255-character major added successfully\", function () {\r",
                       "    var jsonData = pm.response.json();\r",
                       "    pm.expect(jsonData.message).to.include(\"added successfully\");\r",
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -242,15 +234,13 @@
                       "    pm.response.to.be.json;\r",
                       "});\r",
                       "\r",
-                      "pm.test(\"Student with 255-character name added successfully\", function () {\r",
+                      "pm.test(\"Student with 1-character major added successfully\", function () {\r",
                       "    var jsonData = pm.response.json();\r",
                       "    pm.expect(jsonData.message).to.include(\"added successfully\");\r",
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -301,9 +291,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -354,9 +342,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -407,9 +393,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -466,9 +450,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -520,9 +502,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -574,9 +554,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -628,9 +606,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -682,9 +658,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -736,9 +710,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -790,9 +762,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -844,9 +814,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -870,204 +838,6 @@
                   "path": [
                     "api",
                     "students"
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DeleteRequests",
-      "item": [
-        {
-          "name": "GoodRequests",
-          "item": [
-            {
-              "name": "DeleteStudent",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "exec": [
-                      "pm.test(\"Status code is 200\", () => {",
-                      "    pm.response.to.have.status(200);",
-                      "});"
-                    ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
-                  }
-                },
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "exec": [
-                      "pm.sendRequest({",
-                      "    url: pm.variables.replaceIn(\"{{base_url}}\") + \"/api/students\",",
-                      "    method: \"POST\",",
-                      "    header: { \"Content-Type\": \"application/json\" },",
-                      "    body: {",
-                      "        mode: \"raw\",",
-                      "        raw: JSON.stringify({ name: \"Delete Me\", major: \"Temp\", gpa: 2.0 })",
-                      "    }",
-                      "}, function (err, res) {",
-                      "    if (err) {",
-                      "        console.error(\"POST failed:\", err);",
-                      "        return;",
-                      "    }",
-                      "    pm.sendRequest({",
-                      "        url: pm.variables.replaceIn(\"{{base_url}}\") + \"/api/students\",",
-                      "        method: \"GET\"",
-                      "    }, function (err2, res2) {",
-                      "        if (err2) {",
-                      "            console.error(\"GET failed:\", err2);",
-                      "            return;",
-                      "        }",
-                      "        var list = res2.json();",
-                      "        var target = list[list.length - 1];",
-                      "        pm.collectionVariables.set(\"student_id\", target.id);",
-                      "    });",
-                      "});"
-                    ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
-                  }
-                }
-              ],
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "",
-                  "options": {
-                    "raw": {
-                      "language": "text"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{base_url}}/api/students/2",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "students",
-                    "2"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "DeleteCourse",
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "// Status is 200\r\npm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n// Response time is acceptable\r\npm.test(\"Response time is below 2000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(2000);\r\n});\r\n\r\n// Course no longer exists after deletion\r\npm.test(\"Course no longer exists after deletion\", function () {\r\n    pm.sendRequest({\r\n        url: pm.variables.get(\"base_url\") + \"/api/courses/\" + course_id,\r\n        method: \"GET\"\r\n    }, function (err, res) {\r\n        pm.expect(res).to.have.status(404);\r\n    });\r\n});\r\n",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{base_url}}/api/courses/1",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "courses",
-                    "1"
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
-          "name": "BadRequests",
-          "item": [
-            {
-              "name": "DeleteStudentNotFound*",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "exec": [
-                      "pm.test(\"Status code is 404\", () => {\r",
-                      "    pm.response.to.have.status(404);\r",
-                      "});\r",
-                      ""
-                    ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
-                  }
-                }
-              ],
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "// Status is 200\r\npm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n// Response time is acceptable\r\npm.test(\"Response time is below 2000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(2000);\r\n});\r\n\r\n// Student no longer exists after deletion\r\npm.test(\"Student no longer exists after deletion\", function () {\r\n    pm.sendRequest({\r\n        url: pm.variables.get(\"base_url\") + \"/api/students/\" + student_id,\r\n        method: \"GET\"\r\n    }, function (err, res) {\r\n        pm.expect(res).to.have.status(404);\r\n    });\r\n});\r\n",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{base_url}}/api/students/9999999999",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "students",
-                    "9999999999"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "DeleteCourseNotFound*",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "exec": [
-                      "pm.test(\"Status code is 404 or 405\", () => {",
-                      "    pm.expect([404, 405]).to.include(pm.response.code);",
-                      "});"
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "{{base_url}}/api/courses/9999",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "api",
-                    "courses",
-                    "9999"
                   ]
                 }
               },
@@ -1105,9 +875,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1158,9 +926,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1211,9 +977,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1243,7 +1007,7 @@
               "response": []
             },
             {
-              "name": "AddCourseUpperMajorBoundary",
+              "name": "AddCourseUpperRoomBoundary",
               "event": [
                 {
                   "listen": "test",
@@ -1258,15 +1022,13 @@
                       "    pm.expect(pm.response.text()).to.not.be.empty;\r",
                       "});\r",
                       "\r",
-                      "pm.test(\"Course with 255-character name added successfully\", function () {\r",
+                      "pm.test(\"Course with 255-character room added successfully\", function () {\r",
                       "    var responseText = pm.response.text();\r",
                       "    pm.expect(responseText).to.include(\"added successfully\");\r",
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1317,9 +1079,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1370,9 +1130,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1418,9 +1176,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1466,9 +1222,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1514,9 +1268,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1562,9 +1314,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1610,9 +1360,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1658,9 +1406,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -1705,6 +1451,10 @@
                 "exec": [
                   "pm.test(\"Status code is 404 or 200\", () => {",
                   "    pm.expect([404, 200]).to.include(pm.response.code);",
+                  "});",
+                  "",
+                  "pm.test(\"Response body is JSON null\", () => {",
+                  "    pm.expect(pm.response.json()).to.be.null;",
                   "});"
                 ],
                 "type": "text/javascript",
@@ -1764,9 +1514,7 @@
                   "    pm.expect(jsonData).to.have.property(\"name\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -1816,9 +1564,7 @@
                   "    pm.expect(count).to.be.at.least(0);\r",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -1862,9 +1608,7 @@
                   "});\r",
                   ""
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -1876,7 +1620,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "// Response is JSON\r\npm.test(\"Response is JSON\", function () {\r\n    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");\r\n});\r\n\r\n// Each student has name, major, gpa, and id\r\n// gpa can be null (e.g., a student has not completed any courses yet and does not have a GPA)\r\npm.test(\"Each student has name, major, gpa, and id\", function () {\r\n    const data = pm.response.json();\r\n    data.forEach(student => {\r\n        pm.expect(student).to.have.property(\"name\");\r\n        pm.expect(student).to.have.property(\"major\");\r\n        pm.expect(student).to.have.property(\"gpa\");\r\n        pm.expect(student).to.have.property(\"id\");\r\n        if (student.gpa !== null) {\r\n            pm.expect(student.gpa).to.be.a(\"number\");\r\n            pm.expect(student.gpa).to.be.at.least(0);\r\n            pm.expect(student.gpa).to.be.at.most(4.0);\r\n        }\r\n    });\r\n});\r\n\r\n// Response time is acceptable\r\npm.test(\"Response time is below 2000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(2000);\r\n});\r\n",
+              "raw": "",
               "options": {
                 "raw": {
                   "language": "javascript"
@@ -1918,9 +1662,7 @@
                   "});\r",
                   ""
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -1932,7 +1674,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "// Status is 200\r\npm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n// Response is JSON\r\npm.test(\"Response is JSON\", function () {\r\n    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");\r\n});\r\n\r\n// Response is an array\r\npm.test(\"Response is an array\", function () {\r\n    const data = pm.response.json();\r\n    pm.expect(Array.isArray(data)).to.be.true;\r\n});\r\n\r\n// Each course has required fields\r\npm.test(\"Each course has name, maxSize, instructor, and room\", function () {\r\n    const data = pm.response.json();\r\n    data.forEach(course => {\r\n        pm.expect(course).to.have.property(\"id\");\r\n        pm.expect(course).to.have.property(\"name\");\r\n        pm.expect(course).to.have.property(\"maxSize\");\r\n        pm.expect(course).to.have.property(\"instructor\");\r\n        pm.expect(course).to.have.property(\"room\");\r\n    });\r\n});\r\n\r\n// Each course roster is a set\r\npm.test(\"Each course has a roster that is a set\", function () {\r\n    const data = pm.response.json();\r\n    data.forEach(course => {\r\n        pm.expect(course).to.have.property(\"roster\");\r\n        pm.expect(Array.isArray(course.roster)).to.be.true;\r\n    });\r\n});\r\n\r\n// Enrollment does not exceed maxSize\r\npm.test(\"Enrollment does not exceed maxSize\", function () {\r\n    const data = pm.response.json();\r\n    data.forEach(course => {\r\n        pm.expect(course.roster.length).to.be.at.most(course.maxSize);\r\n    });\r\n});\r\n\r\n// Response time is acceptable\r\npm.test(\"Response time is below 2000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(2000);\r\n});\r\n",
+              "raw": "",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1980,9 +1722,7 @@
                       "    pm.expect(pm.response.text()).to.include(\"updated successfully\");",
                       "});"
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2032,9 +1772,7 @@
                       "    pm.expect(pm.response.text()).to.include(\"updated successfully\");\r",
                       "});"
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2084,9 +1822,7 @@
                       "    pm.expect(pm.response.text()).to.include(\"CS1 updated successfully\");\r",
                       "});"
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2137,9 +1873,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2191,9 +1925,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2239,9 +1971,7 @@
                       "    pm.response.to.be.json;\r",
                       "});"
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2288,9 +2018,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2336,9 +2064,7 @@
                       "    pm.response.to.be.json;\r",
                       "});"
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2390,9 +2116,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2439,9 +2163,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2488,9 +2210,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2545,11 +2265,14 @@
                       "    pm.response.to.be.withBody;\r",
                       "    pm.response.to.be.json;\r",
                       "});\r",
+                      "\r",
+                      "pm.test(\"Response confirms student was updated\", function () {\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData.message).to.include(\"updated successfully\");\r",
+                      "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2600,9 +2323,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2653,9 +2374,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2706,9 +2425,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2759,9 +2476,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2812,9 +2527,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2865,9 +2578,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2919,9 +2630,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -2973,9 +2682,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -3027,9 +2734,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -3081,9 +2786,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -3135,9 +2838,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -3183,9 +2884,7 @@
                       "});\r",
                       ""
                     ],
-                    "type": "text/javascript",
-                    "packages": {},
-                    "requests": {}
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -3236,9 +2935,7 @@
                   "    pm.expect(pm.response.text()).to.include(\"removed successfully\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3284,9 +2981,7 @@
                   "    pm.expect(pm.response.text()).to.eql(\"Student not in that course\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3332,9 +3027,7 @@
                   "    pm.expect(pm.response.text()).to.include(\"No such student exists\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3380,9 +3073,7 @@
                   "    pm.expect(pm.response.text()).to.include(\"No such course exists\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3420,6 +3111,233 @@
       "name": "AddStudentToCourse",
       "item": [
         {
+          "name": "DeleteRequests",
+          "item": [
+            {
+              "name": "GoodRequests",
+              "item": [
+                {
+                  "name": "DeleteStudent",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test(\"Status code is 200\", () => {",
+                          "    pm.response.to.have.status(200);",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "exec": [
+                          "pm.sendRequest({",
+                          "    url: pm.variables.replaceIn(\"{{base_url}}\") + \"/api/students\",",
+                          "    method: \"POST\",",
+                          "    header: { \"Content-Type\": \"application/json\" },",
+                          "    body: {",
+                          "        mode: \"raw\",",
+                          "        raw: JSON.stringify({ name: \"Delete Me\", major: \"Temp\", gpa: 2.0 })",
+                          "    }",
+                          "}, function (err, res) {",
+                          "    if (err) { console.error(\"POST failed:\", err); return; }",
+                          "    pm.sendRequest({",
+                          "        url: pm.variables.replaceIn(\"{{base_url}}\") + \"/api/students\",",
+                          "        method: \"GET\"",
+                          "    }, function (err2, res2) {",
+                          "        if (err2) { console.error(\"GET failed:\", err2); return; }",
+                          "        var list = res2.json();",
+                          "        var target = list[list.length - 1];",
+                          "        pm.collectionVariables.set(\"student_id\", target.id);",
+                          "    });",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}/api/students/2",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "students",
+                        "2"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "DeleteCourse",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test(\"Status code is 200\", function () {",
+                          "    pm.response.to.have.status(200);",
+                          "});",
+                          "",
+                          "pm.test(\"Response time is below 2000ms\", function () {",
+                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                          "});",
+                          "",
+                          "pm.test(\"Deleted course no longer retrievable\", function () {",
+                          "    pm.sendRequest({",
+                          "        url: pm.variables.replaceIn(\"{{base_url}}\") + \"/api/courses/\",",
+                          "        method: \"GET\"",
+                          "    }, function (err, res) {",
+                          "        pm.expect(res).to.have.status(404);",
+                          "    });",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "exec": [
+                          "pm.sendRequest({\r",
+                          "    url: pm.variables.replaceIn(\"{{base_url}}\") + \"/api/courses\",\r",
+                          "    method: \"POST\",\r",
+                          "    header: { \"Content-Type\": \"application/json\" },\r",
+                          "    body: {\r",
+                          "        mode: \"raw\",\r",
+                          "        raw: JSON.stringify({\r",
+                          "            name: \"Delete Me\",\r",
+                          "            maxSize: 5,\r",
+                          "            instructor: 1,\r",
+                          "            room: \"Temp Room\"\r",
+                          "        })\r",
+                          "    }\r",
+                          "}, function (err, res) {\r",
+                          "    if (err) console.error(\"Course creation failed:\", err);\r",
+                          "    else console.log(\"Course created for deletion, status:\", res.status());\r",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}/api/courses/2",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "courses",
+                        "2"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "BadRequests",
+              "item": [
+                {
+                  "name": "DeleteStudentNotFound*",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test(\"Status code is 404\", () => {\r",
+                          "    pm.response.to.have.status(404);\r",
+                          "});\r",
+                          ""
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}/api/students/9999999999",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "students",
+                        "9999999999"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "DeleteCourseNotFound*",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test(\"Status code is 404 or 405\", () => {",
+                          "    pm.expect([404, 405]).to.include(pm.response.code);",
+                          "});"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}/api/courses/9999",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "courses",
+                        "9999"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "AddStudentToCourse",
           "event": [
             {
@@ -3434,9 +3352,7 @@
                   "    pm.expect(pm.response.text()).to.include(\"added successfully\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3479,59 +3395,45 @@
                   "});",
                   "",
                   "pm.test(\"Response indicates course is full\", function () {",
-                  "    // This must match the EXACT text returned by your Java/API controller",
                   "    pm.expect(pm.response.text()).to.eql(\"Course is full\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const baseUrl = pm.variables.get(\"base_url\");\r",
-                  "const courseId = 1;\r",
-                  "const studentId = 1;\r",
-                  "\r",
-                  "// 1. Force Course 1 to have a maxSize of 1\r",
-                  "const updateCoursePayload = {\r",
-                  "    method: 'PUT',\r",
-                  "    url: `${baseUrl}/api/courses/${courseId}`,\r",
-                  "    header: { 'Content-Type': 'application/json' },\r",
-                  "    body: {\r",
-                  "        mode: 'raw',\r",
-                  "        raw: JSON.stringify({\r",
-                  "            name: \"Capacity Test Course\",\r",
-                  "            maxSize: 1,\r",
-                  "            instructor: 1,\r",
-                  "            room: \"Test Room\"\r",
-                  "        })\r",
-                  "    }\r",
-                  "};\r",
-                  "\r",
-                  "pm.sendRequest(updateCoursePayload, (err, res) => {\r",
-                  "    if (err) return console.log(\"Setup Error (Update):\", err);\r",
-                  "    \r",
-                  "    // 2. Add Student 1 to Course 1 to fill that 1 slot\r",
-                  "    const fillCoursePayload = {\r",
-                  "        method: 'PUT',\r",
-                  "        url: `${baseUrl}/api/courses/addStudent/${courseId}`,\r",
-                  "        header: { 'Content-Type': 'application/json' },\r",
-                  "        body: { mode: 'raw', raw: studentId.toString() }\r",
-                  "    };\r",
-                  "\r",
-                  "    pm.sendRequest(fillCoursePayload, (err, res) => {\r",
-                  "        if (err) console.log(\"Setup Error (Fill):\", err);\r",
-                  "        else console.log(\"Course is now full and ready for testing.\");\r",
-                  "    });\r",
+                  "const baseUrl = pm.variables.get(\"base_url\");",
+                  "const courseId = 1;",
+                  "const studentId = 1;",
+                  "",
+                  "const updateCoursePayload = {",
+                  "    method: 'PUT',",
+                  "    url: `${baseUrl}/api/courses/${courseId}`,",
+                  "    header: { 'Content-Type': 'application/json' },",
+                  "    body: {",
+                  "        mode: 'raw',",
+                  "        raw: JSON.stringify({ name: \"Capacity Test Course\", maxSize: 1, instructor: 1, room: \"Test Room\" })",
+                  "    }",
+                  "};",
+                  "",
+                  "pm.sendRequest(updateCoursePayload, (err, res) => {",
+                  "    if (err) return console.log(\"Setup Error (Update):\", err);",
+                  "    const fillCoursePayload = {",
+                  "        method: 'PUT',",
+                  "        url: `${baseUrl}/api/courses/addStudent/${courseId}`,",
+                  "        header: { 'Content-Type': 'application/json' },",
+                  "        body: { mode: 'raw', raw: studentId.toString() }",
+                  "    };",
+                  "    pm.sendRequest(fillCoursePayload, (err, res) => {",
+                  "        if (err) console.log(\"Setup Error (Fill):\", err);",
+                  "        else console.log(\"Course is now full and ready for testing.\");",
+                  "    });",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3577,9 +3479,7 @@
                   "    pm.expect(pm.response.text()).to.include(\"No such student exists\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3625,9 +3525,7 @@
                   "    pm.expect(pm.response.text()).to.include(\"No such course exists\");",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3728,9 +3626,7 @@
                   "    pm.expect(count).to.be.at.least(1);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -3753,6 +3649,10 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "DeleteRequests",
+      "item": []
     }
   ],
   "variable": [
