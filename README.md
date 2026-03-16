@@ -35,7 +35,7 @@
 
 ### Running Integration Tests (Postman)
 
-1. Import `src/test/resources/postman/StudentRegDemoFinal.postman_collection.json` into Postman
+1. Import `src/test/resources/postman/AidenStudentRegDemo.postman_collection.json` into Postman
 2. Also import `Local.postman_environment.json` and select it as the active environment
 3. In the **Collections** sidebar, click the **⋯** (three dots) next to **StudentRegDemoFinal** and select **Run collection**
 
